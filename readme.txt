@@ -1,0 +1,3 @@
+Website designed with HTML5, CSS3, and Javascript to create a shopping list that is organized by whatever categories you would like. You can choose to do by aisle or by section of the store.
+You can add items to each category along with the amount you need to buy and the price that will cost and it will have a total at the bottom of the page. The list is
+editable or can be deleted.
