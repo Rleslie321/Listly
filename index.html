@@ -1,0 +1,125 @@
+<!-- Robert Leslie -->
+<!-- Grocery List Sorter - Listly -->
+<!-- 2020 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Listly</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- <h1>Listly</h1>
+        <h3>Grocery List Sorter</h3> -->
+    </header>
+    <div class="toolbar">
+        <p id="delete-ico">Delete <i class="fas fa-trash"></i></p>
+        <p id="edit-ico">Edit <i class="fas fa-edit"></i></p>
+    </div>
+
+    <main>
+        <!-- form content -->
+        <div class="form-container">
+            <div class="form">
+                <h2>Add Your Items:</h2>
+                <form action="">
+                    <div class="oneline">
+                        <label for="item">Item:</label>
+                        <input type="text" id="item" name="item">
+                    </div>
+
+                    <br>
+                    <div class="oneline">
+                        <label for="department">Category:</label>
+                        <select name="department" id="department">
+                            <option value="Produce">Produce</option>
+                            <option value="Grocery">Grocery</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Frozen">Frozen</option>
+                            <option value="Pet">Pet</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="oneline">
+                        <label for="amount">Amount:</label>
+                        <input type="text" id="amount" name="amount">
+                    </div>
+                    <br>
+                    <div class="oneline">
+                        <label for="cost">Cost:</label>
+                        <input type="text" id="cost" name="cost">
+                    </div>
+                    <br>
+                    <button class="enter" id="item-enter">Enter</button>
+                    <p class="warning" id="item-warning"></p>
+                </form>
+            </div>
+
+            <div class="form">
+                <h2>Add New Category:</h2>
+                <form action="">
+                    <div class="oneline">
+                        <label for="category">Category:</label>
+                        <input type="text" id="category" name="category">
+                    </div>
+                    <br>
+                    <button class="enter" id="cat-enter">Enter</button>
+                    <p class="warning" id="cat-warning"></p>
+
+                </form>
+            </div>
+            <div class="form">
+                <h2>Total:</h2>
+                <div class="center">
+                    <h3 id="total">$0.00</h3>
+                </div>
+
+            </div>
+        </div>
+        <!-- grocery list content -->
+        <div class="lists">
+            <div class="list">
+                <h3>Produce<i class="far fa-window-minimize fa-xs place"></i><i id="close"
+                        class="far fa-window-close"></i><i class="fas fa-edit" id="edit"></i></h3>
+                <ul></ul>
+            </div>
+            <div class="list">
+                <h3>Grocery<i class="far fa-window-minimize fa-xs"></i></i><i id="close"
+                        class="far fa-window-close"></i></h3>
+                <ul></ul>
+            </div>
+            <div class="list">
+                <h3>Meat<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                </h3>
+                <ul></ul>
+            </div>
+            <div class="list">
+                <h3>Dairy<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                </h3>
+                <ul></ul>
+            </div>
+            <div class="list">
+                <h3>Frozen<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                </h3>
+                <ul></ul>
+            </div>
+            <div class="list">
+                <h3>Pet<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                </h3>
+                <ul></ul>
+            </div>
+
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
