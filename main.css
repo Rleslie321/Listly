@@ -42,6 +42,14 @@ header{
     background-color: var(--header-toolbar);
     color: var(--text-color-main);
     display: flex;
+    justify-content: space-between;
+}
+.toolbar form{
+    align-self: center;
+    margin-left: 5px;
+}
+.edit-tools{
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -69,6 +77,30 @@ main{
     padding: 5px;
 }
 
+/* css for the modals */
+.modal-header{
+    /* background-color: var(--list-bg-color); */
+    background-image: linear-gradient(#a2cfdf, #69bbda);
+    box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
+}
+
+.modal-body{
+    background-color: var(--bg-color);
+}
+
+.modal-footer{
+    background-color: var(--bg-color);
+    justify-content: center;
+}
+
+.modal-footer button{
+    flex-grow: 1;
+}
+
+.modal-content{
+    border:2px solid var(--border-color);
+}
+
 /* css for form */
 .form{
     border: 2px solid var(--border-color);
@@ -76,13 +108,16 @@ main{
     margin-bottom: 5px;
     position: static;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    max-width: 100%;;
+    max-width: 100%;
+    border-radius: calc(.3rem - 1px);
+    background-clip: padding-box;
 }
 
 .form h2{
     text-align: center;
     padding: 5px;
-    background-color: var(--list-bg-color);
+    /* background-color: var(--list-bg-color); */
+    background-image: linear-gradient(#a2cfdf, #69bbda);
     box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
 }
 .form form{
@@ -140,11 +175,14 @@ main{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    border-radius: calc(.3rem - 1px);
+    background-clip: padding-box;
 }
 .list h3{
     padding: 5px;
     text-align: center;
-    background-color: var(--list-bg-color);
+    /* background-color: var(--list-bg-color); */
+    background-image: linear-gradient(#a2cfdf, #69bbda);
     box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
 }
 .list ul{
@@ -159,7 +197,7 @@ main{
     display: none;
 }
 
-.show{
+.showIco{
     display: inline-block !important;
     position: absolute;
     right: 10px;
@@ -181,6 +219,11 @@ main{
 .list #edit:hover{
     color: var(--edit-color-hover);
     cursor: pointer;
+}
+
+.list h3 input{
+    width: 200px;
+    text-align: center;
 }
 /* media queries */
 @media(max-width:950px){
@@ -229,7 +272,7 @@ main{
     .list h3:hover{
         background-color: var(--list-bg-color2);
     }
-    .list i{
+    .list .fa-window-minimize{
         display: inline-block;
         position: absolute;
         right: 13%;

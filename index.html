@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <title>Listly</title>
 </head>
 
@@ -20,11 +22,92 @@
         <h3>Grocery List Sorter</h3> -->
     </header>
     <div class="toolbar">
-        <p id="delete-ico">Delete <i class="fas fa-trash"></i></p>
-        <p id="edit-ico">Edit <i class="fas fa-edit"></i></p>
+        <form action="">
+            <select name="layout" id="layout">
+                <option value="null">Select One ...</option>
+                <option value="default">Default</option>
+                <option value="Grocery Store">Grocery Store</option>
+            </select>
+        </form>
+        <div class="edit-tools">
+            <p id="delete-ico">Delete <i class="fas fa-trash"></i></p>
+            <p id="edit-ico">Edit <i class="fas fa-edit"></i></p>
+        </div>
     </div>
 
     <main>
+        <!-- modals for editing -->
+        <div id="categoryEditor" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title w-100 text-center">Edit Category:</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="category-edit-form">
+                            <div class="oneline">
+                                <label for="category-edit">Category:</label>
+                                <input type="text" id="category-edit" name="category-edit">
+                            </div>
+                            <p class="warning" id="cat-edit-warning"></p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" form="category-edit-form" class="enter" id="cat-edit-btn">Enter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="item-editor" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title w-100 text-center">Edit Item:</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="item-edit-form">
+                            <div class="oneline">
+                                <label for="item-edit">Item:</label>
+                                <input type="text" id="item-edit" name="item-edit">
+                            </div>
+                            <br>
+                            <div class="oneline">
+                                <label for="department-edit">Category:</label>
+                                <select name="department-edit" id="department-edit">
+                                    <option value="Produce">Produce</option>
+                                    <option value="Grocery">Grocery</option>
+                                    <option value="Meat">Meat</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Frozen">Frozen</option>
+                                    <option value="Pet">Pet</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="oneline">
+                                <label for="amount-edit">Quantity:</label>
+                                <input title="ie: cups, oz, x2, etc" type="text" id="amount-edit" name="amount-edit">
+                            </div>
+                            <br>
+                            <div class="oneline">
+                                <label for="cost-edit">Cost: $</label>
+                                <input type="text" id="cost-edit" name="cost-edit">
+                            </div>
+                            <p class="warning" id="item-edit-warning"></p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" form="item-edit-form" class="enter" id="item-edit-btn">Enter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- form content -->
         <div class="form-container">
             <div class="form">
@@ -49,12 +132,12 @@
                     </div>
                     <br>
                     <div class="oneline">
-                        <label for="amount">Amount:</label>
-                        <input type="text" id="amount" name="amount">
+                        <label for="amount">Quantity:</label>
+                        <input title="ie: cups, oz, x2, etc" type="text" id="amount" name="amount">
                     </div>
                     <br>
                     <div class="oneline">
-                        <label for="cost">Cost:</label>
+                        <label for="cost">Cost: $</label>
                         <input type="text" id="cost" name="cost">
                     </div>
                     <br>
@@ -93,26 +176,30 @@
             </div>
             <div class="list">
                 <h3>Grocery<i class="far fa-window-minimize fa-xs"></i></i><i id="close"
-                        class="far fa-window-close"></i></h3>
+                        class="far fa-window-close"></i><i class="fas fa-edit" id="edit"></i></h3>
                 <ul></ul>
             </div>
             <div class="list">
-                <h3>Meat<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                <h3>Meat<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i><i
+                        class="fas fa-edit" id="edit"></i>
                 </h3>
                 <ul></ul>
             </div>
             <div class="list">
-                <h3>Dairy<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                <h3>Dairy<i class="far fa-window-minimize fa-xs"></i></i><i id="close"
+                        class="far fa-window-close"></i><i class="fas fa-edit" id="edit"></i>
                 </h3>
                 <ul></ul>
             </div>
             <div class="list">
-                <h3>Frozen<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                <h3>Frozen<i class="far fa-window-minimize fa-xs"></i></i><i id="close"
+                        class="far fa-window-close"></i><i class="fas fa-edit" id="edit"></i>
                 </h3>
                 <ul></ul>
             </div>
             <div class="list">
-                <h3>Pet<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i>
+                <h3>Pet<i class="far fa-window-minimize fa-xs"></i></i><i id="close" class="far fa-window-close"></i><i
+                        class="fas fa-edit" id="edit"></i>
                 </h3>
                 <ul></ul>
             </div>
