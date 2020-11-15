@@ -131,13 +131,23 @@ parentList.addEventListener('click', (e) => {
                         oldChild = child;
                     }
                 }
+                let i = -1;
                 category_sum.forEach((cat)=>{
                     if(cat.category == oldChild.value){
                         sum -= cat.sum;
                         total.textContent = `$${(Math.round((sum) * 100) / 100).toFixed(2)}`;
+                        i = category_sum.indexOf(cat);
                     }
                 });
+                category_sum.splice(i, 1);
+                console.log(category_sum);
                 select.removeChild(oldChild);
+                for(child of $('#department-edit')[0].children){
+                    if (currValue.trim() == child.value) {
+                        oldChild = child;
+                    }
+                }
+                $('#department-edit')[0].removeChild(oldChild);
             }
         }
         // else if condition for when someone clicks on the edit button, it will edit the name of the category

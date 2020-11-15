@@ -6,7 +6,8 @@
     --text-color-main: white;
     --header-bg: #525564;
     --header-toolbar: #66697e;
-    --bg-color: #FEF6EB;
+    /* --bg-color2: #FEF6EB; */
+    --bg-color: #f8f2e9;
     --border-color: #C25B56;
     --list-bg-color: #a2cfdf;
     --list-bg-color2: #69bbda;
@@ -128,12 +129,12 @@ main{
 
 /* choose the button color and set as variable later */
 .enter{
-    background-color: violet;
-    border: 1px solid rgb(150, 44, 150);
+    background-color: #f89257;
+    border: 1px solid #b64c0e;
     border-radius: 5px;
 }
 .enter:hover{
-    background-color: rgb(175, 52, 175);
+    background-color: #fa6611;
 }
 
 .warning{
@@ -155,6 +156,9 @@ main{
 }
 .oneline input, .oneline select{
     flex-grow: 1;
+}
+input{
+    padding: 1px 3px;
 }
 .form .center{
     text-align: center;
@@ -188,6 +192,7 @@ main{
 .list ul{
     padding-left: 2em;
     padding-right: 1em;
+    /* list-style-position: inside; */
 }
 
 .list li{
@@ -230,11 +235,17 @@ main{
     .lists{
         grid-template-columns: 50% 50%;
     }
+    header{
+        height: 350px;    
+    }
 }
 
 @media(max-width:780px){
     .lists{
         grid-template-columns: auto;
+    }
+    header{
+        height: 250px;
     }
 }
 /* small media */
@@ -284,5 +295,8 @@ main{
         display: block !important;
         min-height: 100px;
         padding: 5px;
+    }
+    header{
+        height: 150px;
     }
 }
