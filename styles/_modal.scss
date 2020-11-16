@@ -1,0 +1,25 @@
+
+// css for the modals
+@import './variables';
+
+.modal-header{
+    /* background-color: $list-bg-color; */
+    background-image: linear-gradient(#a2cfdf, #69bbda);
+    box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
+}
+
+.modal-body{
+    background-color: $bg-color;
+}
+
+.modal-footer{
+    background-color: $bg-color;
+    justify-content: center;
+    button{
+        flex-grow: 1;
+    }
+}
+
+.modal-content{
+    border:2px solid $border-color;
+}

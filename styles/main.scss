@@ -1,0 +1,120 @@
+// Robert Leslie
+// 2020
+
+@import './variables';
+
+// setting up base values per browser
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// css for the header content
+header{
+    text-align: center;
+    color: $text-color-main;
+    background-color: $header-bg;
+    background-image: url(../images/Listly.png);
+    height: 400px;
+    background-repeat: no-repeat;
+    padding: 10px 0;
+    width: 100vw;
+    max-width: 100%;
+    background-size: 100%;
+    background-position: center;
+}
+
+/* css for the main content of the page */
+main{
+    display: flex;
+    min-height: 90vh;
+    width: 100vw;
+    max-width: 100%;
+    justify-content: space-around;
+    padding: $pad;
+}
+
+@import './toolbar';
+
+@import './modal';
+
+@import './form';
+
+@import './list';
+
+/* media queries */
+@media(max-width:950px){
+    .lists{
+        grid-template-columns: 50% 50%;
+    }
+    header{
+        height: 350px;    
+    }
+}
+
+@media(max-width:780px){
+    .lists{
+        grid-template-columns: auto;
+    }
+    header{
+        height: 250px;
+    }
+}
+/* small media */
+@media(max-width:600px){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+
+    .form{
+        width: 90%;
+        height: auto;
+    }
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lists{
+        grid-template-columns: 90%;
+        width: auto;
+        justify-content: center;
+    }
+    
+    .list{
+        min-height: 10px !important;
+        ul{
+            display: none;
+        }
+        h3{
+            margin-bottom: 0;
+        }
+        &:hover{
+            background-color: $list-bg-color2;
+        }
+        .fa-window-minimize{
+            display: inline-block;
+            position: absolute;
+            right: 13%;
+        }
+        i{
+            &:hover{
+                color: $list-dropdown-ico-clr;
+            }
+        }
+    }
+    
+    .open{
+        display: block !important;
+        min-height: 100px;
+        padding: $pad;
+    }
+    header{
+        height: 150px;
+    }
+}
+

@@ -1,0 +1,33 @@
+
+// css for the tool bar
+
+@import './variables';
+
+.toolbar{
+    background-color: $header-toolbar;
+    color: $text-color-main;
+    display: flex;
+    justify-content: space-between;
+    form{
+        align-self: center;
+        margin-left: 5px;
+    }
+    p{
+        margin: $pad;
+    }
+    #delete-ico{
+        &:hover{
+            @include ico_color($delete-color)
+        }
+    }
+    #edit-ico{
+        &:hover{
+            @include ico_color($edit-color)
+        }
+    }
+}
+
+.edit-tools{
+    display: flex;
+    justify-content: flex-end;
+}

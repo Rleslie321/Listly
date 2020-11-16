@@ -1,0 +1,64 @@
+
+// css for the list items
+@import './variables';
+
+.lists{
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $pad;
+    position: static;
+}
+.list{
+    background-color: $bg-color;
+    border: 2px solid $border-color;
+    min-height: 15rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: calc(.3rem - 1px);
+    background-clip: padding-box;
+    h3{
+        padding: $pad;
+        text-align: center;
+        // background-color: $list-bg-color;
+        background-image: linear-gradient(#a2cfdf, #69bbda);
+        box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
+    }
+    ul{
+        padding-left: 2em;
+        padding-right: 1em;
+        // list-style-position: inside;
+    }
+    li{
+        border-bottom: 1px solid black;
+    }
+    i{
+        display: none;
+    }
+    #close{
+        color: $delete-color;
+        &:hover{
+            @include ico_color($delete-color-hover);
+        }
+    }
+    #edit{
+        color: $edit-color;
+        &:hover{
+            @include ico_color($edit-color-hover);
+        }
+    }
+    h3{
+        input{
+            width: 200px;
+            text-align: center;
+        }
+    }
+}
+
+.showIco{
+    display: inline-block !important;
+    position: absolute;
+    right: 10px;
+    padding-top: 2px;
+}

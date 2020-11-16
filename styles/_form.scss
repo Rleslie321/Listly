@@ -1,0 +1,66 @@
+
+// css for form
+@import './variables';
+
+.form{
+    border: 2px solid $border-color;
+    background-color: $bg-color;
+    margin-bottom: $pad;
+    position: static;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    border-radius: calc(.3rem - 1px);
+    background-clip: padding-box;
+    h2{
+        text-align: center;
+        padding: $pad;
+        /* background-color: $list-bg-color; */
+        background-image: linear-gradient(#a2cfdf, #69bbda);
+        box-shadow: 0 2px 2px 1px  rgba(0, 0, 0, 0.2);
+    }
+    form{
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .center{
+        text-align: center;
+    }
+}
+
+.enter{
+    background-color: $btn-prm-clr;
+    border: 1px solid $btn-prm-border-clr;
+    border-radius: 5px;
+    &:hover{
+        background-color: $btn-prm-hover-clr;
+    }
+}
+
+.warning{
+    color: $warning;
+    text-align: center;
+    padding: $pad;
+}
+
+.border-red{
+    border-color: $warning;
+}
+
+/* css to handle elements that need to appear on one line */
+.oneline{
+    display: flex;
+    label{
+        margin-right: 10px;
+    }
+    input{
+        flex-grow: 1;
+    }
+    select{
+        flex-grow: 1;
+    }
+}
+
+input{
+    padding: 1px 3px;
+}

@@ -1,0 +1,30 @@
+    
+    // sass variables
+    $text-color-main: white;
+    $header-bg: #525564;
+    $header-toolbar: #66697e;
+    // $bg-color2: #FEF6EB;
+    $bg-color: #f8f2e9;
+    $border-color: #C25B56;
+    $list-bg-color: #a2cfdf;
+    $list-bg-color2: #69bbda;
+    $delete-color: red;
+    $delete-color-hover: rgb(156, 3, 3);
+    $edit-color: blue;
+    $edit-color-hover: rgb(0, 0, 173);
+    $pad: 5px;
+    $warning: red;
+    $btn-prm-clr: #f89257;
+    $btn-prm-border-clr: #b64c0e;
+    $btn-prm-hover-clr: #fa6611;
+    $list-dropdown-ico-clr: rgb(201, 196, 196);
+
+    // mixins
+    @mixin flex_basis($size) {
+        flex-basis: $size;
+    }
+
+    @mixin ico_color($color) {
+        color: $color;
+        cursor: pointer;
+    }
