@@ -1,0 +1,11 @@
+---
+deployment:
+ tasks:
+    - export DEPLOYPATH=/home/robexhrv/public_html/projects/listly
+    #for individual files
+    - /bin/cp /home/robexhrv/Listly/app.js $DEPLOYPATH
+    - /bin/cp /home/robexhrv/Listly/index.html $DEPLOYPATH
+    - /bin/cp /home/robexhrv/Listly/main.css $DEPLOYPATH
+    - /bin/cp -R /home/robexhrv/Listly/images $DEPLOYPATH
+    - /bin/cp -R /home/robexhrv/Listly/node_modules $DEPLOYPATH
+    - /bin/cp -R /home/robexhrv/Listly/styles $DEPLOYPATH
